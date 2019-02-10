@@ -4,17 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/Azul_escuro"
     tools:context=".Activity_Two">
+
+    <EditText
+        android:id="@+id/edtoutros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edtpassword"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Outros"
+        android:inputType="textPersonName" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insira os Dados"
         android:gravity="center"
-        android:textSize="30dp"
+        android:text="Dados Para Persistir"
         android:textColor="@android:color/darker_gray"
-        />
+        android:textSize="30dp" />
 
 
     <TextView
@@ -71,10 +82,9 @@
         style="@android:style/Widget.Material.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="242dp"
+        android:layout_marginTop="307dp"
+        android:gravity="center"
         android:text="Inserir BD" />
 
     <Button
@@ -85,10 +95,12 @@
         android:layout_below="@+id/btinserirbd"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="5dp"
         android:gravity="center"
         android:text="LISTAR BD" />
+
+
 
 </RelativeLayout>

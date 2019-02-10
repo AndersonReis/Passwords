@@ -18,7 +18,7 @@ import java.util.Map;
 public class Activity_Two extends AppCompatActivity {
 
     private DBHelper dh;
-    EditText edtloginname, edtsenhapass, edtdescricao;
+    EditText edtloginname, edtsenhapass, edtdescricao, edtoutros;
     Button btinserirbd, btlistarbd;
 
 
@@ -33,6 +33,7 @@ public class Activity_Two extends AppCompatActivity {
         edtloginname = (EditText) findViewById(R.id.edtnameoulogin);
         edtsenhapass = (EditText) findViewById(R.id.edtpassword);
         edtdescricao = (EditText) findViewById(R.id.edtdescricao);
+        edtoutros  = (EditText)  findViewById(R.id.edtoutros);
 
         btinserirbd = (Button) findViewById(R.id.btinserirbd);
         btlistarbd = (Button) findViewById(R.id.btlistar);
@@ -41,11 +42,10 @@ public class Activity_Two extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(edtloginname.getText().length() > 0 && edtsenhapass.getText().length() > 0 &&
-                        edtdescricao.getText().length() > 0){
+                        edtdescricao.getText().length() > 0 && edtoutros.getText().length() > 0){
 
-                    dh.insert(edtloginname.getText().toString(),
-                            edtsenhapass.getText().toString(),
-                            edtdescricao.getText().toString());
+                    dh.insert(edtloginname.getText().toString(), edtsenhapass.getText().toString(),
+                            edtdescricao.getText().toString(), edtoutros.getText().toString());
 
                     AlertDialog.Builder adb = new AlertDialog.Builder(Activity_Two.this);
 
@@ -55,6 +55,7 @@ public class Activity_Two extends AppCompatActivity {
                     edtloginname.setText("");
                     edtsenhapass.setText("");
                     edtdescricao.setText("");
+                    edtoutros.setText("");
                 }else {
                     AlertDialog.Builder adb = new AlertDialog.Builder(Activity_Two.this);
                     adb.setTitle("ERRO...");
@@ -80,7 +81,7 @@ public class Activity_Two extends AppCompatActivity {
                         Contato contato = (Contato) contatos.get(i);
                         AlertDialog.Builder adb = new AlertDialog.Builder(Activity_Two.this);
                         adb.setTitle("REGISTRO DE NÚMERO: " + i);
-                        adb.setMessage("Login: "+ contato.getLogin()+ "\nSenha: "+ contato.getSenha()+"\nDescrição: "+ contato.getDescricao());
+                        adb.setMessage("Login: "+ contato.getLogin()+ "\nSenha: "+ contato.getSenha()+"\nDescrição: "+ contato.getDescricao()+"\nOutros: " + contato.getOutros());
 
                         adb.setPositiveButton("OK BB", new DialogInterface.OnClickListener() {
                             @Override

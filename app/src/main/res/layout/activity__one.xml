@@ -31,6 +31,7 @@
         android:hint="Insira seu Email"
         android:inputType="textEmailAddress" />
 
+
     <EditText
         android:id="@+id/edtsenha"
         android:layout_width="match_parent"
